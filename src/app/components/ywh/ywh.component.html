@@ -1,0 +1,8 @@
+<app-config [config]="config"></app-config>
+
+<mat-card>
+  <mat-card-content>
+    <app-tags [config]="config" *ngIf="!config.dropdown"></app-tags>
+    <app-tags-dropdown [config]="config" *ngIf="config.dropdown"></app-tags-dropdown>
+  </mat-card-content>
+</mat-card>

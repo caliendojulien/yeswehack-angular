@@ -1,0 +1,14 @@
+<mat-form-field class="form-field-material">
+  <mat-select
+    placeholder="Placeholder"
+    [disabled]="config.disable"
+    multiple
+    *ngIf="config.dropdown"
+    (selectionChange)="ajouter($event)"
+  >
+    <mat-select-trigger>
+      <app-tag *ngFor="let s of selection" [tag]="s" [config]="config" (tag_retire)="retirer(s)" class="option-material"></app-tag>
+    </mat-select-trigger>
+    <mat-option *ngFor="let tag of tags" [value]="tag">{{tag["nom"]}}</mat-option>
+  </mat-select>
+</mat-form-field>

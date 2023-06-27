@@ -1,0 +1,23 @@
+<mat-form-field appearance="fill" [class.error-material]="tags.length === 0" class="form-field-material">
+  <mat-label *ngIf="config.label">Un label</mat-label>
+  <mat-chip-grid #grille *ngIf="!config.dropdown" class="chip-grid-material">
+    <app-tag *ngFor="let tag of tags" [tag]="tag" [config]="config" (tag_retire)="retirer($event)"></app-tag>
+    <input
+      matInput
+      [readOnly]="config.disable"
+      [matChipInputSeparatorKeyCodes]="toucheDeSeparation"
+      [formControl]="inputTag"
+      [matChipInputFor]="grille"
+      (matChipInputTokenEnd)="ajouter($event)"
+      [placeholder]="tags.length ? '' : 'Placeholder'"
+      class="input-material"
+    >
+    <mat-error *ngIf="!tags.length">
+      <mat-icon>error</mat-icon>
+    </mat-error>
+    <mat-error *ngIf="erreurunique">
+      <mat-icon>Un tag doit être unique</mat-icon>
+    </mat-error>
+  </mat-chip-grid>
+  <mat-hint class="msgerreur" *ngIf="config.helptext && !tags.length">Un helper</mat-hint>
+</mat-form-field>

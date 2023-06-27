@@ -1,0 +1,17 @@
+// Chips
+.mat-mdc-standard-chip {
+  --mdc-chip-elevated-container-color: #E40A17;
+  --mdc-chip-label-text-color: #FFFFFF;
+  --mdc-chip-with-trailing-icon-trailing-icon-color: #FFFFFF;
+  --mdc-chip-elevated-disabled-container-color: rgba(0, 0, 0, 0.12);
+  --mdc-chip-disabled-label-text-color: rgba(0, 0, 0, 0.38);
+  &:hover {
+    --mdc-chip-elevated-container-color: #BE0813;
+  }
+  &:focus {
+    --mdc-chip-elevated-container-color: #98070F;
+  }
+}
+.mat-mdc-chip-remove {
+  opacity: 1 !important;
+}

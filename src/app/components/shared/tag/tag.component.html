@@ -1,0 +1,8 @@
+<mat-chip-row
+  [disabled]="config.disable"
+  (removed)="retirer(tag)">
+  {{tag.nom}}
+  <button matChipRemove *ngIf="!config.disable">
+    <mat-icon class="icon-cancel">cancel</mat-icon>
+  </button>
+</mat-chip-row>

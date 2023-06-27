@@ -1,0 +1,21 @@
+.form-field-material {
+  width: 100%;
+  border: 1px solid rgba(208, 213, 221, 1);
+
+  &:hover {
+    border: 1px solid rgba(25, 95, 139, 1);
+  }
+
+  &:focus {
+    border: 1px solid rgba(30, 114, 167, 0.5);
+  }
+
+  &:disabled {
+    color: rgba(0, 0, 0, 0.38);
+    border: 1px solid rgba(0, 0, 0, 0.26);
+  }
+}
+
+.option-material {
+  margin-right: 8px;
+}
